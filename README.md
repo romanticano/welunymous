@@ -1,4 +1,22 @@
 *WELUNYMOUS
+* copy the following script into the profile file
+* $ cd ../usr/etc
+* $ nano profile 
+
+Profile File
+====
+```
+clear
+cowsay -f welu "ANONYMOUS INDONESIA" | lolcat
+figlet "WELCOME ANONYMOUS" | lolcat
+echo SYSTEM READY :
+python ../usr/etc/welunymous/ip.py -m | lolcat
+echo TODAY IS :
+date | lolcat
+echo KERNEL TYPE :
+uname -smr | lolcat
+```
+* CTRL+X AND Y [ENTER]
 
 
 Download/Installation
