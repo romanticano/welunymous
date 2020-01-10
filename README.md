@@ -1,4 +1,5 @@
-*WELUNYMOUS
+WELCOME WELUNYMOUS script 2020
+====
 * copy the following script into the profile file
 * $ cd ../usr/etc
 * $ nano profile 
