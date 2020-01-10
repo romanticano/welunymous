@@ -1,0 +1,66 @@
+U
+
+    ò^Ë  ã                   @   sn   d Z dZddlZddlZddlZddlmZ ddlm	Z	 ddl
+mZ ddlm
+Z
+ ddlmZ G d	d
+„ d
+ƒZdS )a³  
+    This file is part of IPGeoLocation tool.
+    Copyright (C) 2015-2016 @maldevel
+    https://github.com/maldevel/IPGeoLocation
+    
+    IPGeoLocation - Retrieve IP Geolocation information 
+    Powered by http://ip-api.com
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    For more see the file 'LICENSE' for copying permission.
+Úmaldevelé    N)Úplatform)Úcall)Úrequest)ÚMyExceptions©ÚLoggerc                   @   s6   e Zd Zd
+dd„Zdd„ Zdd„ Zdd	„ Zd
+d„ ZdS )ÚUtilsFc                 C   s   t ||ƒ| _ d S )Nr   )ÚselfÚnologÚverbose© r
+   ú</data/data/com.termux/files/home/IPGeoLocation/core/Utils.pyÚ__init__'   s    zUtils.__init__c                 C   sv   t |jƒtkrrt |jƒtkrr| j d¡ tdkr@td|jgƒ n2tdksXtdksXtdkrft	 
+|j¡ n| j d¡ dS )	z7Open IP Geolocation in Google Maps with default browserz Opening Geolocation in browser..ÚcygwinZcygstartZwin32ZlinuxZlinux2z,-g option is not available on your platform.N)ÚtypeZ
+LongtitudeÚfloatZLatituder   ÚPrintÚ	_platformr   ZGoogleMapsLinkÚ
+webbrowserÚopenÚ
+PrintError)r
+   Z	ipGeolObjr
+   r
+   r   ÚopenLocationInGoogleMaps+   s    zUtils.openLocationInGoogleMapsc                 C   s    zt  |¡W S    Y dS X dS )zResolve hostname to IP addressFN)ÚsocketZ
+gethostbyname)r
+   Zhostnamer
+   r
+   r   ÚhostnameToIP:   s    zUtils.hostnameToIPc                 C   s$   zt  |¡ W dS    Y dS X dS )z(Check if ip is a valid IPv4/IPv6 addressTFN)Ú	ipaddressZ
+ip_address)r
+   Úipr
+   r
+   r   ÚisValidIPAddressB   s
+    
+zUtils.isValidIPAddressc                 C   sn   d}| j  d |¡¡ z$t |¡}| |d¡ t |¡ W n   d}Y nX |dkrb| j  d¡ nt ¡ ‚dS )zcheck proxy connectivityTzTesting proxy {} connectivity..ÚhttpFzProxy server is reachable.N)	r   r   Úformatr   ÚRequestZ	set_proxyÚurlopenr   ÚProxyServerNotReachableError)r
+   ÚurlÚproxyZcheckÚreqr
+   r
+   r   ÚcheckProxyConnK   s    
+
+zUtils.checkProxyConnN)FF)Ú__name__Ú
+__module__Ú__qualname__r   r   r   r   r&   r
+   r
+   r
+   r   r	   %   s
+   
+	r	   )Ú__doc__Ú
+__author__r   r   r   Úsysr   r   Ú
+subprocessr   Úurllibr   Zcorer   Úcore.Loggerr   r	   r
+   r
+   r
+   r   Ú<module>   s   
