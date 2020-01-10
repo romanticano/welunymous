@@ -31,12 +31,13 @@ Download/Installation
 * pkg install git
 * git clone https://github.com/romanticano/welunymous.git
 * cd welunymous
-* mv -r -f welu.cow ../usr/share/cows
+* cp -r -f welu.cow ../usr/share/cows
 * cd 
-* mv -r -f welunymous ../usr/etc
+* cp -r -f welunymous ../usr/etc
 * pkg install nano
 * pkg install python
 * pip install termcolor
+* rm -r -f welunymous
 
 
 Requirements
